@@ -3996,7 +3996,7 @@ i input {
 
 .cbi-map >.cbi-section .cbi-section-table,.container .cbi-tabmenu,.container #tabmenu,.cbi-map >.cbi-section .table {
 	margin-left: -2%;
-    width: 105%;
+    width: 100%;
 }
 
 .admin-status-overview h2.content {

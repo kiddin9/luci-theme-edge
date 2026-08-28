@@ -8,6 +8,22 @@
 // 1. Main Container Layout
 // ==========================================================================
 
+body::before {
+    content: "";
+    background-color: #1e1e1e;
+    background-image: url("/luci-static/argon/img/pattern.svg");
+    background-repeat: repeat;
+    background-size: 440px auto;
+    position: fixed;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .3;
+}
+
 .main {
     position: relative;
     width: 100%;

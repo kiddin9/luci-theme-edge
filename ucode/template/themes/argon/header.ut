@@ -47,7 +47,7 @@
 
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}">
+<html lang="{{ dispatcher.lang }}"{% if (mode == 'dark'): %} data-darkmode="true"{% elif (mode == 'light'): %} data-darkmode="false"{% endif %}>
 
 <head>
 	{% include("themes/" + theme + "/head_meta", { hostname: hostname, node: node, bar_color: bar_color, media: media }) %}

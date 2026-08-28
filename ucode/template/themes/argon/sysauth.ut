@@ -115,7 +115,7 @@
 	<!-- Video Player End -->
 	{% else %}
 	<!-- Image Background Start -->
-	<div class="main-bg" id="main-bg" style="background-image:url({{ bgArry.bgUrl }})"></div>
+	<div class="main-bg" id="main-bg" {% if (cfg.get_first('argon', 'global', 'online_wallpaper') == "default"): %}style="background-image:url({{ bgArry.bgUrl }})"{% endif %}></div>
 	<!-- Image Background End -->
 	{% endif %}
 	<!-- Login Container Start -->

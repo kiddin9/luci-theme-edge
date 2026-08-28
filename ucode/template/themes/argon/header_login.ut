@@ -54,9 +54,7 @@
 	<link rel="stylesheet" href="{{ media }}/css/cascade.css{# ?v=PKG_VERSION #}">
 	<style title="text/css">
 		{% if (mode == 'normal'): %}
-			@media (prefers-color-scheme: dark) {
 				{{ dark_css }}
-			}
 		{% endif %}
 		{% if (mode == 'dark'): %}
 			{{ dark_css }}

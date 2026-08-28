@@ -46,7 +46,7 @@
 
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}">
+<html lang="{{ dispatcher.lang }}"{% if (mode == 'light'): %} data-darkmode="false"{% else %} data-darkmode="true"{% endif %}>
 
 <head>
 	{% include("themes/" + theme + "/head_meta", { hostname: hostname, node: node, bar_color: bar_color, media: media }) %}
@@ -54,9 +54,7 @@
 	<link rel="stylesheet" href="{{ media }}/css/cascade.css{# ?v=PKG_VERSION #}">
 	<style title="text/css">
 		{% if (mode == 'normal'): %}
-			@media (prefers-color-scheme: dark) {
 				{{ dark_css }}
-			}
 		{% endif %}
 		{% if (mode == 'dark'): %}
 			{{ dark_css }}

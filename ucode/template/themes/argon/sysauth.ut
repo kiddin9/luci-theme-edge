@@ -115,11 +115,12 @@
 	<!-- Video Player End -->
 	{% else %}
 	<!-- Image Background Start -->
-	<div class="main-bg" id="main-bg" style="background-image:url({{ bgArry.bgUrl }})"></div>
+	{% online_wallpaper = cfg.get_first('argon', 'global', 'online_wallpaper') ?? 'default' %}
+	<div class="main-bg" id="main-bg" {% if (online_wallpaper != 'default'): %}style="background-image:url({{ bgArry.bgUrl }})"{% endif %}></div>
 	<!-- Image Background End -->
 	{% endif %}
 	<!-- Login Container Start -->
-	<div class="login-container">
+	<div class="login-container" {% if (online_wallpaper == 'default'): %} style="backdrop-filter: blur(0px)"{% endif %}>
 		<div class="login-form">
 			<!-- Logo Start -->
 			<a class="brand" href="/"><img src="{{ media }}/img/argon.svg" class="icon">

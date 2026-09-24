@@ -60,14 +60,14 @@
 
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}">
+<html lang="{{ dispatcher.lang }}"{% if (mode == 'light'): %} data-darkmode="false"{% else %} data-darkmode="true"{% endif %}>
 
 <head>
 	{% include("themes/" + theme + "/head_meta", { hostname: hostname, node: node, bar_color: bar_color, media: media }) %}
 
 	<link rel="stylesheet" href="{{ media }}/css/cascade.css{# ?v=PKG_VERSION #}">
 	{% if (mode == 'normal'): %}
-	<link rel="stylesheet" href="{{ media }}/css/dark.css{# ?v=PKG_VERSION #}" media="(prefers-color-scheme: dark)">
+	<link rel="stylesheet" href="{{ media }}/css/dark.css{# ?v=PKG_VERSION #}">
 	{% elif (mode == 'dark'): %}
 	<link rel="stylesheet" href="{{ media }}/css/dark.css{# ?v=PKG_VERSION #}">
 	{% endif %}

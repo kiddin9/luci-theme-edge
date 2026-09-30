@@ -63,7 +63,7 @@
 		let mimeType = "";
 
 		if (fs.access("/etc/config/argon")) {
-			let online_wallpaper = cfg.get_first('argon', 'global', 'online_wallpaper') ?? (cfg.get_first('argon', 'global', 'bing_background') == '1' ? 'bing' : null);
+			online_wallpaper = cfg.get_first('argon', 'global', 'online_wallpaper') ?? (cfg.get_first('argon', 'global', 'bing_background') == '1' ? 'bing' : null);
 			if (online_wallpaper && online_wallpaper != "none") {
 				const picurl = ubus.call("luci.argon_wallpaper", "get_url") ?? {};
 				if (type(picurl?.url) == 'string' && match(picurl.url, /^https:\/\/[^[:space:]"'<>]+$/)) {
@@ -93,7 +93,7 @@
 
 %}
 <!-- Login Page Start -->
-<div class="login-page">
+<div class="login-page {{ online_wallpaper == 'default' ? ' defwallpaper' : '' }}">
 	{% if ( bgArry.backgroundType == "Video" ): %}
 	<!-- Video Player Start -->
 	<div class="video">

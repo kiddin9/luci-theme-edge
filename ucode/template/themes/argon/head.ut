@@ -67,7 +67,7 @@
 
 -%}
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}" data-argon-mode="{{ mode }}">
+<html lang="{{ dispatcher.lang }}" data-argon-mode="{{ mode }}" {% if (mode == 'dark'): %} data-darkmode="true"{% elif (mode == 'light'): %} data-darkmode="false"{% endif %}>
 
 <head>
 	{% if (!is_login): %}

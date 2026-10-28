@@ -8,7 +8,14 @@
 		},
 		"depends": {
 			"acl": [ "luci-app-argon-config" ],
-			"uci": { "argon": true }
+			"uci": {
+				"argon": true,
+				"luci": {
+					"main": {
+						"mediaurlbase": "/luci-static/argon"
+					}
+				}
+			}
 		}
 	}
 }
